@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Go wasm</title>
+    <link rel="stylesheet" href="static/index.css">
+</head>
+
+<body>
+<script src="wasm_exec.js"></script>
+
+<script>
+    if (!WebAssembly.instantiateStreaming) {
+        // polyfill
+        WebAssembly.instantiateStreaming = async (resp, importObject) => {
+            const source = await (await resp).arrayBuffer();
+            return await WebAssembly.instantiate(source, importObject);
+        };
+    }
+
+    const go = new Go();
+
+    let mod, inst;
+
+    WebAssembly.instantiateStreaming(fetch("lib.wasm"), go.importObject).then(
+        async result => {
+            mod = result.module;
+            inst = result.instance;
+            await go.run(inst);
+        }
+    );
+
+</script>
+    <div class="card">
+        <h1 class="title">Calculator</h1>
+        <div class="inputs">
+            <span>Insert First Value</span>
+            <input type="text" id="value1" class="input"/>
+            <span>Insert second Value</span>
+            <input type="text" id="value2" class="input"/>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="add('value1','value2','result');">Add</button>
+            <button class="button" onclick="subtract('value1','value2','result');">subtract</button>
+            <button class="button" onclick="multiplies('value1','value2','result');">multiplies</button>
+            <button class="button" onclick="divide('value1','value2','result');">divide</button>
+        </div>
+        <input type="text" id="result" class="result"/>
+    </div>
+</body>
+</html>
