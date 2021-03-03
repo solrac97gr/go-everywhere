@@ -3,6 +3,25 @@
     <meta charset="utf-8"/>
     <title>Calculator Demo | Golang and Webassembly</title>
     <link rel="stylesheet" href="static/index.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="static/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/icons/favicon-16x16.png">
+    <link rel="manifest" href="static/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="static/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="This project it's a little demo of how to work with Golang and Webassembly for write a functional Website. This
+        project will be updated with new functionality so suggest the functionalities for the calculator."/>
 </head>
 
 <body>
@@ -30,21 +49,29 @@
     );
 
 </script>
-    <div class="card">
-        <h1 class="title">Calculator</h1>
-        <div class="inputs">
-            <span>Insert First Value</span>
-            <input type="text" id="value1" class="input"/>
-            <span>Insert second Value</span>
-            <input type="text" id="value2" class="input"/>
-        </div>
-        <div class="buttons">
-            <button class="button" onclick="add('value1','value2','result');">Add</button>
-            <button class="button" onclick="subtract('value1','value2','result');">subtract</button>
-            <button class="button" onclick="multiplies('value1','value2','result');">multiplies</button>
-            <button class="button" onclick="divide('value1','value2','result');">divide</button>
-        </div>
-        <input type="text" id="result" class="result"/>
+<div class="card">
+    <img  class="cover" src="static/images/cover.png">
+    <h1 class="title">Calculator</h1>
+    <p>This project it's a little demo of how to work with Golang and Webassembly for write a functional Website. This
+        project will be updated with new functionality so suggest the functionalities for the calculator
+    </p>
+    <p class="linkToCode">
+        Check the code <a href="https://github.com/solrac97gr/goEverywhere" target="_blank">here</a>
+    </p>
+    <div class="inputs">
+        <span class="inputText">Insert First Value</span>
+        <input type="text" id="value1" class="input"/>
+        <span class="inputText">Insert second Value</span>
+        <input type="text" id="value2" class="input"/>
     </div>
+    <div class="buttons">
+        <button class="button" onclick="add('value1','value2','result');">Add</button>
+        <button class="button" onclick="subtract('value1','value2','result');">subtract</button>
+        <button class="button" onclick="multiplies('value1','value2','result');">multiplies</button>
+        <button class="button" onclick="divide('value1','value2','result');">divide</button>
+    </div>
+    <span class="inputText result">Result</span>
+    <input type="text" id="result" class="result" readonly/>
+</div>
 </body>
 </html>

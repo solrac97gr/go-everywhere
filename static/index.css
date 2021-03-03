@@ -1,7 +1,7 @@
 body {
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    background-color: darkolivegreen;
     position: relative;
     display: flex;
     justify-content: center;
@@ -10,14 +10,16 @@ body {
 
 .title {
     font-family: Roboto, Arial;
-    color:cornflowerblue;
+    color: darkolivegreen;
 }
 
 .input {
-    margin-top: 5px;
+    margin-top: 8px;
+    padding: 5px;
 }
 
 .card {
+    text-align: center;
     background-color: white;
     border-radius: 8px;
     -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.75);
@@ -39,17 +41,49 @@ body {
     flex-direction: column;
     font-family: Arial;
 }
-.buttons{
-    margin-top: 5px;
+
+.result {
+    border: none;
+    outline: none;
 }
-.button{
+
+.result:focus {
+    border: none;
+    outline: none;
+}
+
+.inputText {
+    font-weight: bold;
+    margin-top: 8px;
+    color:darkolivegreen;
+}
+
+.buttons {
+    margin-top: 8px;
+}
+
+.button {
     background-color: darkolivegreen;
     border-radius: 3px;
     padding: 7px;
     border: none;
-    color:white;
+    color: white;
     font-size: 15px;
 }
-.result{
+
+.result {
+    font-size: 21px;
     margin-top: 10px;
+    color:blue;
+    font-width: bold;
+}
+
+.cover{
+    width: 70%;
+    text-align: center;
+}
+
+.linkToCode{
+    color:red;
+    font-weight: bold;
 }
